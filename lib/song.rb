@@ -59,5 +59,17 @@ class Song
     @song.artist_name = artist_name
     @song    
   end
+  
+  def self.new_from_filename(song)
+    deets = song.split(/[.-]/)
+    deets
+    name = deets[1].strip
+    artist_name = deets[0].strip
+
+    @song = self.new
+    @song.name = name
+    @song.artist_name = artist_name
+    @song
+  end   
 end
 
